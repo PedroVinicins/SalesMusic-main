@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualização de Áudio</title>
+  <style>
+  
+    #visualizacao-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    #visualizacao-circulo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff, #ff5733);
+      box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <audio id="audio-player" controls>
+    <source src="music/Joelma - Voando Pro Pará.mp3" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <div id="visualizacao-container">
+    <div id="visualizacao-circulo"></div>
+  </div>
+
+  <script>
+    const audioPlayer = document.getElementById('audio-player');
+    const visualizacaoCirculo = document.getElementById('visualizacao-circulo');
+
+    const contextoAudio = new (window.AudioContext || window.webkitAudioContext)();
+    const analisador = contextoAudio.createAnalyser();
+    const fonteAudio = contextoAudio.createMediaElementSource(audioPlayer);
+
+    fonteAudio.connect(analisador);
+    analisador.connect(contextoAudio.destination);
+
+    analisador.fftSize = 256;
+    const comprimentoBuffer = analisador.frequencyBinCount;
+    const dadosFrequencia = new Uint8Array(comprimentoBuffer);
+
+    function animarVisualizacao() {
+      analisador.getByteFrequencyData(dadosFrequencia);
+
+      const amplitudeMaxima = Math.max(...dadosFrequencia.slice(0, comprimentoBuffer / 4));
+
+      const intensidade = amplitudeMaxima / 255;
+      visualizacaoCirculo.style.boxShadow = `0 0 ${20 + intensidade * 30}px rgba(255, 87, 51, ${intensidade})`;
+
+      requestAnimationFrame(animarVisualizacao);
+    }
+
+    audioPlayer.addEventListener('play', () => {
+      contextoAudio.resume().then(() => {
+        animarVisualizacao();
+      });
+    });
+  </script>
+</body>
+</html>

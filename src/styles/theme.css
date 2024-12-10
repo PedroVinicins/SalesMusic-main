@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body ,html{
+    overflow-y: auto;
+    overflow-x:hidden;
+    background-color: #111;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-right {
+    display: grid;
+    width: 73%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #333;
+    z-index: 1;
+    transition: .8s;
+}
+
+
+.top-Biblioteca {
+    display: flex;
+    width: 325px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #333333;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.top-Biblioteca h1 {
+    color: white;
+    margin: 15px;
+}
+
+.main-left a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    margin: 5px;
+}
+
+.main-left {
+    position: absolute;
+    top: 20;
+    left: 0;
+    width: 345px;
+    height: 100%;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #222;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: .8s;
+    padding: 10px;
+    display: grid;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #fff;
+}
+
+.main-left.menu-open {
+    transform: translateX(-100%);
+}
+
+.main-right.open {
+    width: 100%;
+}
+
+
+.left {
+    position: relative;
+    top: -150px;
+}
+
+.items h3,
+p {
+    position: relative;
+    color: aliceblue;
+    text-align: center;
+    top: 10px;
+}
+
+.items button {
+    position: relative;
+    top: 35px;
+    left: 10px;
+    padding: 12px;
+    background-color: white;
+    color: #111;
+    border: none;
+    border-radius: 16px;
+    outline: none;
+    cursor: pointer;
+}
+
+.criar-playlist,
+.podcasts {
+    position: relative;
+    left: 0px;
+    top: 125px;
+    width: 325px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: #333;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(255, 242, 242, 0);
+}
+
+/*main-ringt play de musicas em altas*/
+
+.main-right,
+.music {
+    float: right;
+}
+
+.musics-destaques {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.musics {
+    position: relative;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lista-artistas {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+}
+
+.lista-artistas h1 {
+    display: flex;
+    margin: 10px;
+    padding: 12px;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #222;
+}
+
+.cantor {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.artistas {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.artistas img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artistas .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 10px 10px;
+}
+
+.cantor img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cantor:hover img {
+    transform: scale(1.1);
+}
+.artistas:hover img {
+    transform: scale(1.1);
+}
+
+.cantor .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 10px 10px;
+}
+
+.cantor:hover .info {
+    opacity: 1;
+}
+.artistas:hover .info {
+    opacity: 1;
+}

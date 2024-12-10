@@ -1,0 +1,102 @@
+Delivered-To: alunoweb770@gmail.com
+Received: by 2002:a05:6402:643:b0:5d3:ee49:b2d3 with SMTP id u3csp1355829edx;
+        Mon, 9 Dec 2024 15:36:59 -0800 (PST)
+X-Received: by 2002:a05:620a:26a8:b0:7b1:48ff:6b62 with SMTP id af79cd13be357-7b6bcad3212mr2592229185a.16.1733787418840;
+        Mon, 09 Dec 2024 15:36:58 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733787418; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Ha2QyB+LXGxE4tORkX8lfe+PnpyXMRDE6+4xL5Ht/YvKttkapOjKysZWDODNDoHC5o
+         pBSdGngNOX4Xcsr10J/c3Yd+6kGoDQYcaJz+dqWsYSEINSTGD8OiXcXfNcXPhZs2Iaub
+         T4ik67aOeP5gIz1TteW9Yhx3JrGqGcgfbMmxPYDDz91nEZpVFnBF1pcj0qHYk8x3ZTJt
+         GOUPaxyGa8Y0KQqaiYDVPa01xuqzScqV31RR1y/SdgykdcIcn8R9WeLfzIjTJ9sMLzKq
+         Mc9s01s8aVfNwMNG8YMOZN9eYoZ4dYnCNEDQt1GNb72zgW1HMbnZGGNY+1QX5P0SheiV
+         X8NA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=zQnjJFuADSOv8FG7l5jRturDBiXc6aF0xFsjkzpA+18=;
+        fh=rM2Z/UwVVUDQdAIlfCrxxVp/LxJW3NOV2PSnxvmjcQs=;
+        b=SFQO5igGmMRnWGMayg7G7o83gdPqfb+Q+TLoKcMihPxOX9uTOwwNdntl/X734tspnE
+         pr4K55trUfj2dztM/sK6OJm6N1a2/icSdAN+DseG/r2WNylpP+FfcuF32DFzXzvaVXHA
+         hOzZ89YbkXr+fEe/Z/72oHTcuEr7wLjRocb5VyHf9X7RE9EMS09trkKWn2Bt03/AUb3B
+         0Psgvhy2dE99RRsaPoHWiHunmotXcTBZ+XahRVNEg83mUJlPnQj+yARSyjaCcYT0gIn2
+         Thx588bNBy/sLGp/cqdufD0a66wwVzhEg1MdU9XcDquJokrc/5agLxoXJcs32jRcJRBW
+         qfVw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=gcIYu3fD;
+       spf=pass (google.com: domain of alunoweb835@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=alunoweb835@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <alunoweb835@gmail.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id d75a77b69052e-46746b9c03esor50390071cf.1.2024.12.09.15.36.58
+        for <alunoweb770@gmail.com>
+        (Google Transport Security);
+        Mon, 09 Dec 2024 15:36:58 -0800 (PST)
+Received-SPF: pass (google.com: domain of alunoweb835@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=gcIYu3fD;
+       spf=pass (google.com: domain of alunoweb835@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=alunoweb835@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1733787418; x=1734392218; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=zQnjJFuADSOv8FG7l5jRturDBiXc6aF0xFsjkzpA+18=;
+        b=gcIYu3fDlTaEYJMdrmjaOsHyyI8C4DuPiyICWLYfBBGxtfLSosZXZf+WFxkc1Dn5oa
+         eLYYs/UOHV8BQoyjV4BGYuAT8rSu9laL27SKlCTmIqx5YCTaA37PDao5iptcMrEG/RT4
+         bomVxL7R4egAaH5snKf1aMzEWJsRw/nr5OVAVGOBfk+UDPWPgh913e7HqkYHRhGlFMPx
+         EvHAFHIltQs44e2Y/IIQxgYuOcf8g1BIoWB+IgFilCKEUCnRe3v+jc7VzTNxXvvtZe/t
+         av7X9jQBLBcrve3Ii6dw9kwqBCmKT09in/0oNLFowkXlAJ+8bMcitP9jpYFX5xqqmTeY
+         HWIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1733787418; x=1734392218;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=zQnjJFuADSOv8FG7l5jRturDBiXc6aF0xFsjkzpA+18=;
+        b=dvP3ilZz8t7CnXVRCeVDpRwVePt4W4snXh+WBkHyePZj+8kUqlqnOQ8FVrRBYVFH0Z
+         aO5Q8LbeNatc66ilNeZLAlCvb7iAeE3YST0eagr2mZA5cV3QkACyaP76sAUTNTMwv6AJ
+         LdYTnlQ2G4qBxr39QscvO5TIrHsTcY8br9nR9uxYmsu8mdRDDnTseaWazFLIVbbBotgR
+         FAputIJ/v44osr4mJB9lAuzNiWBREqC6OTwavXriJdtuakiVtB1vx1sKzNNiF7Up6wSt
+         Lxk7aTu4DIsxpqKYTyx0znvALQPaOj7jKTFD2R4ksQpCQD8RXMD5w4trxaFpRkjRalLw
+         T7qw==
+X-Gm-Message-State: AOJu0Yxp/mbG+FOF3gM4gJqNT7Xz4vCe7zzXzwn3/mGCmdsSlNyIBFrO
+	AJGTpC+x4gqnul7+CxmiKmiY0QfkQNtUdT2MwOIhEGDz5b8dUYYCOvXFeVjGb1jEkxPbreE30J3
+	PJWPt3dI3+ZF2Kj1ql24AYzktANRrd3VFw0w=
+X-Gm-Gg: ASbGncvKcoengzY3aneBzgfxmf18Ufu/EhBfzwE5z0eIwHy/OMGidL/dKUfucmMYTP8
+	JGyKNjlakiNzBBmjhDc5fCpDdJQbIew2GXEBPLg==
+X-Google-Smtp-Source: AGHT+IHt/QwAsXupHjt8tl3owxGZ3bk6SBXcdHKvSse7dTq1rY7iZRvf4WzWGKlg2UpG2Q0K1hfa+rNdcnE1evxDi9A=
+X-Received: by 2002:ac8:7f42:0:b0:467:630d:85ef with SMTP id
+ d75a77b69052e-467630d8a0emr89321041cf.41.1733787418007; Mon, 09 Dec 2024
+ 15:36:58 -0800 (PST)
+MIME-Version: 1.0
+From: Daniel Ferreira de Souza <alunoweb835@gmail.com>
+Date: Mon, 9 Dec 2024 20:36:47 -0300
+Message-ID: <CAEZ8AU7fTJx1UiWdvNbTThP50qk0jqqz8nKPgOAMndb-qZbXjA@mail.gmail.com>
+Subject: 
+To: "alunoweb770@gmail.com" <alunoweb770@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000002aa26b0628ded797"
+
+--0000000000002aa26b0628ded797
+Content-Type: text/plain; charset="UTF-8"
+
+ img <https://drive.google.com/open?id=1i5yiCcQ1wJgXk6Fyf-tswRk3xgHgC4F7>
+
+--0000000000002aa26b0628ded797
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><div class=3D"gmail_chip gmail_drive_chip" style=3D"wi=
+dth:386px;height:20px;max-height:20px;background-color:#f5f5f5;margin:6px 0=
+;padding:10px;color:#222;font:normal 400 14px/20px &#39;Google Sans&#39;,sa=
+ns-serif;border:1px solid #ddd"><a href=3D"https://drive.google.com/open?id=
+=3D1i5yiCcQ1wJgXk6Fyf-tswRk3xgHgC4F7" target=3D"_blank" style=3D"color:rgb(=
+32,33,36);display:inline-block;overflow:hidden;text-overflow:ellipsis;white=
+-space:nowrap;text-decoration:none;border:none;width:100%" aria-label=3D"im=
+g"><img style=3D"vertical-align: text-bottom; border: none; padding-right: =
+10px; height: 20px;" alt=3D"" src=3D"https://drive-thirdparty.googleusercon=
+tent.com/16/type/application/vnd.google-apps.folder+shared">=C2=A0<span dir=
+=3D"ltr" style=3D"vertical-align:bottom">img</span></a></div></div>
+
+--0000000000002aa26b0628ded797--

@@ -10,7 +10,7 @@
   .slides {
     display: flex;
     width: 100%; /* Três slides, cada um ocupando 100% */
-    animation: slide-animation 15s infinite; /* Animação com 5s por slide */
+    animation: slide-animation 5s infinite; /* Animação com 5s por slide */
   }
   
   .slide {

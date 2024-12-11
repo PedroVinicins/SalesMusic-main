@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.musicPLay {
+    width: 90%;
+    max-width: 400px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.song-info {
+    margin-bottom: 20px;
+}
+
+.album-cover img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.song-info h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.song-info p {
+    margin: 2px 0;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.controls button {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #1ed760;
+}
+
+.progress-container {
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #535353;
+    border-radius: 2px;
+    position: relative;
+}
+
+.progress-thumb {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #1DB954;
+    border-radius: 50%;
+    top: -3px;
+    left: 0;
+    transform: translateX(0%);
+    cursor: pointer;
+}
+
+.progress-time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.volume-control {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.volume-control label {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-right: 10px;
+}
+
+.volume-control input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #535353;
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #1DB954;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+</style>
+<body>
+    <div class="musicPLay">
+        <div class="player">
+            <div class="song-info">
+                <div class="album-cover">
+                    <img src="https://via.placeholder.com/150" alt="Album Cover">
+                </div>
+                <h2>Música</h2>
+                <p>Cantor Desconhecido</p>
+                <p>Sem informações</p>
+            </div>
+    
+            <div class="controls">
+                <button onclick="prevTrack()">&#10094;</button> <!-- ícone de retroceder -->
+                <button onclick="playPause()">&#9654;</button> <!-- ícone de play/pause -->
+                <button onclick="nextTrack()">&#10095;</button> <!-- ícone de avançar -->
+            </div>
+    
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+                <div id="progress-thumb" class="progress-thumb"></div>
+                <div class="progress-time">
+                    <span id="current-time">0:00</span>
+                    <span id="total-time">5:57</span> <!-- Duração total da música -->
+                </div>
+            </div>
+            <!-- Controle de volume no lado direito -->
+            <div class="volume-control">
+                <label for="volumeSlider">Volume</label>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+            </div>
+    
+            <audio id="audioPlayer" preload="auto"></audio>
+        </div>
+    
+        </div>
+    
+        <audio id="audio-player" src="sweetchildofmine.mp3" preload="auto"></audio>
+        </div>
+</body>
+</html>

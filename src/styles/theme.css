@@ -11,13 +11,6 @@ body ,html{
     background-color: #111;
 }
 
-section {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .main-right {
     display: grid;
     width: 73%;
@@ -54,8 +47,6 @@ section {
 
 .main-left {
     position: absolute;
-    top: 20;
-    left: 0;
     width: 345px;
     height: 100%;
     margin: 5px;
@@ -63,10 +54,9 @@ section {
     background-color: #222;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     transition: .8s;
-    padding: 10px;
     display: grid;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     color: #fff;
 }
 
@@ -75,14 +65,12 @@ section {
 }
 
 .main-right.open {
+    left: 0;
     width: 100%;
+    height: 100%;
+    float: right;
 }
 
-
-.left {
-    position: relative;
-    top: -150px;
-}
 
 .items h3,
 p {
@@ -109,7 +97,6 @@ p {
 .podcasts {
     position: relative;
     left: 0px;
-    top: 125px;
     width: 325px;
     height: 150px;
     border-radius: 5px;
@@ -120,9 +107,14 @@ p {
 
 /*main-ringt play de musicas em altas*/
 
-.main-right,
-.music {
-    float: right;
+.main-right {
+    display: block;
+    position: relative;
+    left: 370px;
+    width: 599px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .musics-destaques {
@@ -136,12 +128,12 @@ p {
 
 
 .musics {
-    position: relative;
-    margin: 5px;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
     display: flex;
+    width: auto;
+    height: auto;
+    margin: 15px;
+    justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 

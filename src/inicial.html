@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/src/styles/theme.css">
     <link rel="stylesheet" href="/src/styles/sidebar.css">
+    <link rel="stylesheet" href="/src/styles/musicPLay.css">
     <link rel="stylesheet" href="/src/styles/slide.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,8 +39,6 @@
             <input type="radio" name="carousel" id="slide1" checked>
             <input type="radio" name="carousel" id="slide2">
             <input type="radio" name="carousel" id="slide3">
-            <input type="radio" name="carousel" id="slide4">
-            <input type="radio" name="carousel" id="slide5">
         
             <div class="slides">
                 <div class="slide">
@@ -49,10 +48,7 @@
                     <img src="/src/img/Destaques/Quenn.jpeg" alt="Slide 2">
                 </div>
                 <div class="slide">
-                    <img src="/src/img/Destaques/rock.jpeg" alt="Slide 3">
-                </div>
-                <div class="slide">
-                    <img src="/src/img/Destaques/Tim maia.jpeg" alt="Slide 4">
+                    <img src="/src/img/Destaques/Charlie brimm.jpg" alt="Slide 3">
                 </div>
             </div>
         
@@ -89,7 +85,47 @@
         </div>
     </div>
 
-    <main class="main-right">
+    <div class="musicPLay">
+    <div class="player">
+        <div class="song-info">
+            <div class="album-cover">
+                <img id="albumCover" src="/src/img/Artistas/N roses.png" alt="Album Cover">
+            </div>
+            <h2 id="songTitle">Sweet Child O' Mine</h2>
+            <p id="songTranslation">Minha Doce Criança</p>
+            <p id="songArtist">Guns N' Roses</p>
+        </div>
+
+        <div class="controls">
+            <button onclick="prevTrack()">&#10094;</button>
+            <button onclick="playPause()">&#9654;</button>
+            <button onclick="nextTrack()">&#10095;</button>
+        </div>
+
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+            <div id="progress-thumb" class="progress-thumb"></div>
+            <div class="progress-time">
+                <span id="current-time">0:00</span>
+                <span id="total-time">5:57</span>
+            </div>
+        </div>
+
+        <div class="volume-control">
+            <label for="volumeSlider">Volume</label>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+        </div>
+
+        <audio id="audioPlayer" preload="auto"></audio>
+    </div>
+    </div>
+
+    <audio id="audio-player" src="/src/sweetchildofmine.mp3" preload="auto"></audio>
+    <audio id="audio-player" src="/src/videoplayback (1).m4a" preload="auto"></audio>
+    <audio id="audio-player" src="/src/videoplayback.m4a" preload="auto"></audio>
+    </div>
+
+    <div class="main-right">
         <div class="lista-artistas">
             <h1>Artistas!</h1>
             <div class="musics-destaques">
@@ -225,10 +261,42 @@
                         <h4>Queen</h4>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="cantor">
+                    <a href="/src/MusicPlay.html">
+                        <img src="/src/img/Artistas/mamonas.jpg" alt="Cantor">
+                    </a>
+                    <div class="info">
+                        <h4>Mamonas</h4>
+                    </div>
+                </div>
 
-        <div class="lista-artistas">
+                <div class="cantor">
+                    <a href="/src/MusicPlay.html">
+                        <img src="/src/img/Artistas/Charlie-Music1.jpeg" alt="Cantor">
+                    </a>
+                    <div class="info">
+                        <h4>Transpiração Continua Prolongada</h4>
+                    </div>
+                </div>
+
+                <div class="cantor">
+                    <a href="/src/MusicPlay.html">
+                        <img src="/src/img/Artistas/Charlie-Music2.jpeg" alt="Cantor">
+                    </a>
+                    <div class="info">
+                        <h4>La Familia 013</h4>
+                    </div>
+                </div>
+                <div class="cantor">
+                    <a href="/src/MusicPlay.html">
+                        <img src="/src/img/Artistas/100_ charlie Brown jr.jpg" alt="Cantor">
+                    </a>
+                    <div class="info">
+                        <h4>100% Charlie brown jr</h4>
+                    </div>
+                </div>
+            </div>
+            </div>
             <div class="musics">
                 <div class="cantor">
                     <a href="/src/MusicPlay.html">
@@ -280,25 +348,11 @@
                         <h4>Bocas Ordinárias</h4>
                     </div>
                 </div>
-                <div class="cantor">
-                    <a href="/src/MusicPlay.html">
-                        <img src="/src/img/Artistas/Charlie-Music2.jpeg" alt="Cantor">
-                    </a>
-                    <div class="info">
-                        <h4>La Familia 013</h4>
-                    </div>
-                </div>
-                <div class="cantor">
-                    <a href="/src/MusicPlay.html">
-                        <img src="/src/img/Artistas/Charlie-Music1.jpeg" alt="Cantor">
-                    </a>
-                    <div class="info">
-                        <h4>Transpiração Continua Prolongada</h4>
-                    </div>
-                </div>
+          
+
             </div>
         </div>
-    </main>
+    </div>
 </body>
 
 </html>
